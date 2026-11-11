@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Achados e Perdidos - IFPB</title>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
-
 <body>
-    <nav>
-        
-        <img src="/static/images/ifpb.png" alt="Logo do  IFPB" class="logo">
-        <p>Achados e perdidos</p>
-        <a href="#">Perdidos</a>
-        <a href="#">Sobre</a>
-        <button class="btn-cadastrar">Cadastrar</button>
-        <button class="btn-entrar">Entrar</button>
-        
-     
-    </nav> 
-    <main>
-        {% block content %}{% endblock %}   
-    <footer>
+    <header>
+        <nav>
+            <img src="/static/images/ifpb.png" alt="Logo do IFPB" class="logo">
+            <span class="site-name">Achados e perdidos</span>
+            <a href="#">Itens Encontrados</a>
+            <a href="#">Sobre</a>
+            <a href="#" class="btn-cadastrar">Cadastrar</a>
+            <a href="#" class="btn-entrar">Entrar</a>
+        </nav>
+    </header>
 
-     <p>&copy; IFPB Todos os direitos reservados.</p> 
-     <a href="#">Sobre</a>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; IFPB. Todos os direitos reservados.</p>
+        <a href="#">Sobre</a>
     </footer>
 </body>
+
 </html>
