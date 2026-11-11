@@ -1,21 +1,21 @@
-<link rel ="stylesheet" href=""{{url_for('static', filename='css/modal.css')}}>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}">
 
 <input type="checkbox" id="modal-login-toggle" class="modal-toggle">
 
 <div class="modal">
-    <label for="modal-login-toggle" class="modal-fundo"></label>
-    <div class="modal-caixa">
-        <label for="modal-login-toggle" class="modal-fechar">&times;</label>
-        <h2>Entrar</h2>
-        <form method="POST" action="{{ url_for('usuario.login') }}">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required>
+  <label for="modal-login-toggle" class="modal-fundo"></label>
+  <div class="modal-caixa">
+    <label for="modal-login-toggle" class="modal-fechar">&times;</label>
+    <h2>Entrar</h2>
+    <form method="POST" action="{{ url_for('usuario.login') }}">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" placeholder=" " required>
 
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" name="senha" required>
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" name="senha" placeholder=" " required>
 
-            <buttonn type="submit">Entrar</buttonn>
-        </form>
-        <p>Não tem conta? <a href="{{url_for('usuario.cadastro')}}">Cadastre-se</a></p>
-    </div>
+      <button type="submit">Entrar</button>
+    </form>
+    <p>Não tem conta? <a href="{{ url_for('usuario.cadastro') }}">Cadastre-se</a></p>
+  </div>
 </div>
