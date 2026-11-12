@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Achados e Perdidos - IFPB{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}">
+    {% block styles %}{% endblock %}
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="{{ url_for('static', filename='images/ifpb.png') }}" alt="Logo do IFPB" class="logo">
+            <span class="site-name">Achados e perdidos</span>
+            <a href="#">Itens Encontrados</a>
+            <a href="#">Sobre</a>
+            <a href="#" class="btn-cadastrar">Cadastrar</a>
+            <label for="modal-login-toggle" class="btn-entrar">Entrar</label>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    {% include 'modal_login.html' %}
+
+    <footer>
+        <p>&copy; IFPB. Todos os direitos reservados.</p>
+        <a href="#">Sobre</a>
+    </footer>
+</body>
+
+</html>
