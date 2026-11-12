@@ -1,0 +1,95 @@
+.modal-toggle { display: none; }
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal-toggle:checked ~ .modal { display: flex; }
+
+.modal-fundo {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-caixa {
+  position: relative;
+  box-sizing: border-box;
+  width: 90%;
+  max-width: 400px;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.modal-fechar {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-caixa form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modal-caixa input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.modal-caixa input:focus { outline: 2px solid #a78bfa; }
+
+.modal-caixa button {
+  padding: 0.7rem;
+  background: #8b5cf6;
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-abrir {
+  padding: 0.5rem 1rem;
+  background: #8b5cf6;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-caixa h2 {
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+.modal-caixa label {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.modal-caixa button:hover { background: #7c3aed; }
+
+.modal-caixa input:invalid:not(:placeholder-shown) {
+  border-color: #dc2626;
+}
+
+.modal-caixa p {
+  margin: 1rem 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.modal-caixa a { color: #7c3aed; }
+
+@media (max-width: 480px) {
+  .modal-caixa { padding: 1.5rem; }
+}
