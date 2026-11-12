@@ -16,7 +16,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    min-height: 350px;
+    padding: 60px 20px;
     text-align: center;
     background: linear-gradient(135deg,
             #2b0b45,
