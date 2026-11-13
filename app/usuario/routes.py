@@ -24,3 +24,8 @@ def login():
     session['usuario_nome'] = dados['nome']
     session['usuario_email'] = dados['email']
     return redirect(url_for('main.index'))
+
+@usuario.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('main.index'))
