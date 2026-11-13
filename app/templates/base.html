@@ -18,7 +18,12 @@
             <a href="#">Itens Encontrados</a>
             <a href="#">Sobre</a>
             <a href="#" class="btn-cadastrar">Cadastrar</a>
-            <label for="modal-login-toggle" class="btn-entrar">Entrar</label>
+            {% if session.usuario_email %}
+                <span class="usuario-nome">Olá, {{ session.usuario_nome }}</span>
+                <a href="{{ url_for('usuario.logout') }}" class="btn-entrar">Sair</a>
+            {% else %}
+                <label for="modal-login-toggle" class="btn-entrar">Entrar</label>
+            {% endif %}
         </nav>
     </header>
 
