@@ -103,3 +103,12 @@
 @media (max-width: 480px) {
   .modal-caixa { padding: 1.5rem; }
 }
+
+.modal-caixa .modal-erro {
+  margin: 0 0 0.5rem;
+  padding: 0.6rem;
+  background: #fee2e2;
+  color: #b91c1c;
+  border-radius: 6px;
+  text-align: center;
+}
