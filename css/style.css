@@ -22,7 +22,12 @@ nav {
     padding: 12px 16px;
     background-color: #4B0082;
 }
-
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+    margin-left: auto;
+    
+}
 nav a {
     padding: 8px 4px;
     color: #FFFFFF;

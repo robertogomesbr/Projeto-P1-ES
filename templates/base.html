@@ -5,19 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Achados e Perdidos - IFPB</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}">
 </head>
 
 <body>
+    {% include "modal_cadastro.html" %}
+        {% include "modal_login.html" %}
+
     <header>
         <nav>
-            <img src="/static/images/ifpb.png" alt="Logo do IFPB" class="logo">
+            <img src="{{ url_for('static', filename='images/ifpb.png') }}" alt="Logo do IFPB" class="logo">
             <span class="site-name">Achados e perdidos</span>
             <a href="#">Itens Encontrados</a>
             <a href="#">Sobre</a>
-            <a href="#" class="btn-cadastrar">Cadastrar</a>
-            {% include "modal_cadastro.html" %}
-            <a href="#" class="btn-entrar">Entrar</a>
+            <div class="nav-buttons">
+                <label for="modal-cadastro-toggle" class="btn-cadastrar">Cadastrar</label>
+                <label for="modal-login-toggle" class="btn-entrar">Entrar</label>
+            </div>
         </nav>
     </header>
 
@@ -29,6 +34,18 @@
         <p>&copy; IFPB. Todos os direitos reservados.</p>
         <a href="#">Sobre</a>
     </footer>
+<script>
+  const login = document.getElementById('modal-login-toggle');
+  const cadastro = document.getElementById('modal-cadastro-toggle');
+
+  login.addEventListener('change', () => {
+    if (login.checked) cadastro.checked = false;
+  });
+
+  cadastro.addEventListener('change', () => {
+    if (cadastro.checked) login.checked = false;
+  });
+</script>
 </body>
 
 </html>
