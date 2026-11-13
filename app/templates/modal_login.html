@@ -3,9 +3,11 @@
 <input type="checkbox" id="modal-login-toggle" class="modal-toggle">
 
 <div class="modal">
-  <label for="modal-login-toggle" class="modal-fundo"></label>
+ <label for="modal-login-toggle" class="modal-fundo"></label>
   <div class="modal-caixa">
+    
     <label for="modal-login-toggle" class="modal-fechar">&times;</label>
+
     <h2>Entrar</h2>
     <form method="POST" action="{{ url_for('usuario.login') }}">
       <label for="email">E-mail</label>
@@ -19,3 +21,6 @@
     <p>Não tem conta? <a href="{{ url_for('usuario.cadastro') }}">Cadastre-se</a></p>
   </div>
 </div>
+
+
+
