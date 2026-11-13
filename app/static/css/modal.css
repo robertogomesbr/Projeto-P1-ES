@@ -27,13 +27,23 @@
   border-radius: 10px;
 }
 
-.modal-fechar {
+.modal-caixa .modal-fechar {
   position: absolute;
-  top: 0.5rem;
-  right: 1rem;
+  top: 0.4rem;
+  right: 0.5rem;
+ 
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.5rem;
+  line-height: 1;
+  border-radius: 25%;
   cursor: pointer;
 }
+
+.modal-caixa .modal-fechar:hover { background: #ede9fe; }
 
 .modal-caixa form {
   display: flex;
@@ -92,4 +102,13 @@
 
 @media (max-width: 480px) {
   .modal-caixa { padding: 1.5rem; }
+}
+
+.modal-caixa .modal-erro {
+  margin: 0 0 0.5rem;
+  padding: 0.6rem;
+  background: #fee2e2;
+  color: #b91c1c;
+  border-radius: 6px;
+  text-align: center;
 }
