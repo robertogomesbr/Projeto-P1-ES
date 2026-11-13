@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+Achados e Perdidos
+{% endblock %}
+
+{% block content %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}
+
+<section class="apresentacao">
+
+    <p>
+        Este é o nosso sistema de achados e perdidos,
+        onde você pode encontrar objetos perdidos ou
+        cadastrar objetos encontrados.
+    </p>
+
+    <a href="#">Visualizar objetos encontrados</a>
+
+</section>
+
+<section class="como-funciona">
+
+    <h2>Como funciona?</h2>
+
+    <p>
+        Facilitamos a comunicação entre pessoas que
+        encontraram objetos e pessoas que os perderam.
+    </p>
+
+</section>
+
+{% endblock %}

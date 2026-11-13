@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}">
+
+<input type="checkbox" id="modal-cadastro-toggle" class="modal-toggle">
+
+<div class="modal">
+  <label for="modal-cadastro-toggle" class="modal-fundo"></label>
+  <div class="modal-caixa">
+    <label for="modal-cadastro-toggle" class="modal-fechar">&times;</label>
+    <h2>Criar conta</h2>
+    <form method="POST" action="{{ url_for('usuario.cadastro') }}">
+      <label for="cad-nome">Nome</label>
+      <input type="text" id="cad-nome" name="nome" placeholder=" " required minlength="3">
+
+      <label for="cad-email">E-mail</label>
+      <input type="email" id="cad-email" name="email" placeholder=" " required>
+
+      <label for="cad-senha">Senha</label>
+      <input type="password" id="cad-senha" name="senha" placeholder=" " required minlength="6">
+
+      <label for="cad-confirmar">Confirmar senha</label>
+      <input type="password" id="cad-confirmar" name="confirmar_senha" placeholder=" " required minlength="6">
+
+      <button type="submit">Cadastrar</button>
+    </form>
+    <p>Já tem conta? <label for="modal-login-toggle" class="modal-trocar">Entrar</label></p>
+  </div>
+</div>  
