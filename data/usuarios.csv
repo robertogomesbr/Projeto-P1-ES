@@ -1,0 +1,2 @@
+nome,email,senha
+Teste,teste@email.com,scrypt:32768:8:1$7fdJ5Bhet2s4cgSw$9b27de088050ff4a12873e79fe4dc8ca86071a06dd9c2b949cb707256714ff293c62d6ef026bb49a208d78631f8365f136ce0dceb2f82448ce67e09b622eed7b
