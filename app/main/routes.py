@@ -32,10 +32,9 @@ def cadastro():
     if erros:
         for erro in erros:
             flash(erro, 'cadastro')
-        return redirect(url_for('main.index'))
-    else:
-        
-        # Armazenar dos dados em csv
-        flash('Conta criada com sucesso!', 'sucesso')
+        return redirect(url_for('main.index'))        
+    
+    # Armazenar dos dados em csv
+    flash('Conta criada com sucesso!', 'sucesso')
     
     return redirect(url_for('main.index'))
