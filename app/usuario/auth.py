@@ -3,7 +3,7 @@ from flask import session, redirect, url_for
 
 
 def usuario_logado():
-    return "usuario_email" in session
+    return "usuario_id" in session
 
 
 def login_obrigatorio(funcao):
