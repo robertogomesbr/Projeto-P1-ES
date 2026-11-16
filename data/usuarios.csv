@@ -1,0 +1,2 @@
+id,nome,email,senha_hash
+1,Beto,beto@gmail.com,scrypt:32768:8:1$eNCb1dkmzbjETyKc$3087a0143c90f70c3a40a161aaae5850e1884b6bcc36b8a4f22a6639ff3618354a782c3b8b1a5becc3dc573178996de2a9f4f98af8ca8e006e9a44bb1a601cc6

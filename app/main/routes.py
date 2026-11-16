@@ -1,4 +1,4 @@
-from flask import Blueprint, flash, request, redirect, url_for, render_template
+from flask import Blueprint, flash, request, redirect, url_for, render_template, session
 from app.services.usuario_service import *
 
 main = Blueprint('main', __name__)
@@ -32,9 +32,18 @@ def cadastro():
     if erros:
         for erro in erros:
             flash(erro, 'cadastro')
-        return redirect(url_for('main.index'))        
+        return redirect(url_for('main.index'))
     
-    # Armazenar dos dados em csv
+    # Tenta cadastrar o usuário
+    sucesso, resultado = criar_usuario(nome, email, senha)   
+    
+    if not sucesso:
+        flash(resultado, 'cadastro')
+        return redirect(url_for('main.index'))     
+    
+    session['usuario_id'] = resultado['id']
+    session['usuario_nome'] = resultado['nome']
+    
     flash('Conta criada com sucesso!', 'sucesso')
     
     return redirect(url_for('main.index'))
