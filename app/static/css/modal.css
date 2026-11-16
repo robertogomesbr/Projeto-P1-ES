@@ -9,7 +9,7 @@
   z-index: 10;
 }
 
-.modal-toggle:checked ~ .modal { display: flex; }
+.modal-toggle:checked + .modal { display: flex; }
 
 .modal-fundo {
   position: absolute;
@@ -111,4 +111,10 @@
   color: #b91c1c;
   border-radius: 6px;
   text-align: center;
+}
+
+.modal-trocar {
+    color: #7c3aed;
+    cursor: pointer;
+    text-decoration: underline;
 }

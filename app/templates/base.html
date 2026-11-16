@@ -17,7 +17,7 @@
             <span class="site-name">Achados e perdidos</span>
             <a href="#">Itens Encontrados</a>
             <a href="#">Sobre</a>
-            <a href="#" class="btn-cadastrar">Cadastrar</a>
+            <label for="modal-cadastro-toggle" class="btn-cadastrar">Cadastrar</label>
             {% if session.usuario_email %}
                 <span class="usuario-nome">Olá, {{ session.usuario_nome }}</span>
                 <a href="{{ url_for('usuario.logout') }}" class="btn-entrar">Sair</a>
@@ -31,7 +31,10 @@
         {% block content %}{% endblock %}
     </main>
     
+    <input type="radio" name="modal-toggle" id="modal-fechado"
+       class="modal-toggle" checked>
     {% include 'modal_login.html' %}
+    {% include 'modal_cadastro.html' %}
 
     <footer>
         <p>&copy; IFPB. Todos os direitos reservados.</p>

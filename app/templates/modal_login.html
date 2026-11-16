@@ -1,29 +1,25 @@
-<link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}">
+﻿<link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}">
 
-<input type="checkbox" id="modal-login-toggle" class="modal-toggle" {% if abrir_modal %}checked{% endif %}>
+<input type="radio" name="modal-toggle" id="modal-login-toggle" class="modal-toggle" {% if abrir_modal %}checked{% endif %}>
 
 <div class="modal">
- <label for="modal-login-toggle" class="modal-fundo"></label>
-  <div class="modal-caixa">
-    
-    <label for="modal-login-toggle" class="modal-fechar">&times;</label>
 
+  <label for="modal-fechado" class="modal-fundo"></label>
+  <div class="modal-caixa">
+    <label for="modal-fechado" class="modal-fechar">&times;</label>
     <h2>Entrar</h2>
+    {% if abrir_modal and erro_login %}
+    <p class="modal-erro">{{ erro_login }}</p>
+    {% endif %}
     <form method="POST" action="{{ url_for('usuario.login') }}">
-      {% if erro_login %}
-      <p class="modal-erro">{{ erro_login }}</p>
-     {% endif %}
       <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" placeholder=" " value="{{ email_digitado or '' }}" required>
-      
+      <input type="email" id="email" name="email" placeholder=" " required>
+
       <label for="senha">Senha</label>
       <input type="password" id="senha" name="senha" placeholder=" " required>
 
       <button type="submit">Entrar</button>
     </form>
-    <p>Não tem conta? <a href="{{ url_for('usuario.cadastro') }}">Cadastre-se</a></p>
+    <p>Não tem conta? <label for="modal-cadastro-toggle" class="modal-trocar">Cadastre-se</label></p>
   </div>
 </div>
-
-
-
