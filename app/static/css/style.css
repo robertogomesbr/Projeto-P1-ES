@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     min-height: 100vh;
     min-height: 100dvh;
@@ -9,11 +15,18 @@ body {
     color: #241238;
 }
 
+header {
+    width: 100%;
+    background-color: #4B0082;
+}
+
 p {
     font-size: 14px;
 }
 
 nav {
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -40,7 +53,6 @@ nav a:hover {
     font-weight: bold;
 }
 
-/* Funciona tanto para <button> quanto para <a> */
 .btn-cadastrar,
 .btn-entrar {
     display: inline-block;

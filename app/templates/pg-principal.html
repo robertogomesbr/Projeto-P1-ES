@@ -1,0 +1,60 @@
+
+{% extends "base.html" %}
+
+{% block title %}
+Itens Encontrados - Achados e Perdidos
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/pg-principal.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="pagina-objetos">
+
+    <div class="cabecalho-objetos">
+        <h1>Objetos encontrados</h1>
+        <p>
+            Confira os objetos cadastrados e encontre aquele que você está procurando.
+        </p>
+    </div>
+
+    <div class="filtros-objetos">
+
+        <input
+            type="search"
+            name="busca"
+            placeholder="Buscar objeto pelo nome..."
+            aria-label="Buscar objeto pelo nome"
+        >
+
+        <select name="categoria" aria-label="Filtrar por categoria">
+            <option value="">Todas as categorias</option>
+        </select>
+
+        <input
+            type="date"
+            name="data"
+            aria-label="Filtrar por data"
+        >
+
+    </div>
+
+    <ul class="lista-objetos">
+
+        {% for objeto in objetos %}
+            <li>
+                {# aqui vai o include do card_objeto.html dentro de um li. #}
+            </li>
+        {% else %}
+            <li class="mensagem-vazia">
+                Nenhum objeto cadastrado até o momento.
+            </li>
+        {% endfor %}
+
+    </ul>
+
+</section>
+
+{% endblock %}
