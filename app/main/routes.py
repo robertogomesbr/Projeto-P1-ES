@@ -6,3 +6,7 @@ main = Blueprint('main', __name__)
 def index():
     
     return render_template('index.html')
+
+@main.route('/objetos')
+def pg_principal():
+    return render_template('pg-principal.html', objetos=[])

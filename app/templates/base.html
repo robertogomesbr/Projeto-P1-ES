@@ -15,7 +15,8 @@
         <nav>
             <img src="{{ url_for('static', filename='images/ifpb.png') }}" alt="Logo do IFPB" class="logo">
             <span class="site-name">Achados e perdidos</span>
-            <a href="#">Itens Encontrados</a>
+            <a href="{{ url_for('main.index') }}">Início</a>
+            <a href="{{ url_for('main.pg_principal') }}">Itens Encontrados</a>
             <a href="#">Sobre</a>
             <label for="modal-cadastro-toggle" class="btn-cadastrar">Cadastrar</label>
             {% if session.usuario_email %}

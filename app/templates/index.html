@@ -4,11 +4,11 @@
 Achados e Perdidos
 {% endblock %}
 
-{% block content %}
-
 {% block styles %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 {% endblock %}
+
+{% block content %}
 
 <section class="apresentacao">
 
@@ -18,7 +18,7 @@ Achados e Perdidos
         cadastrar objetos encontrados.
     </p>
 
-    <a href="#">Visualizar objetos encontrados</a>
+    <a href="{{ url_for('main.pg_principal') }}">Visualizar objetos encontrados</a>
 
 </section>
 
