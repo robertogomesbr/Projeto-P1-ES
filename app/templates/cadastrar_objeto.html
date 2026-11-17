@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Cadastrar objeto - IFPB{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form_objeto.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="form-objeto-container">
+        <h1>Cadastrar objeto</h1>
+
+        <form method="post" enctype="multipart/form-data" class="form-objeto">
+            <div class="campo">
+                <label for="categoria">Categoria</label>
+                <select id="categoria" name="categoria" required>
+                    <option value="" disabled selected>Selecione uma categoria</option>
+                    <option value="documentos">Documentos</option>
+                    <option value="eletronicos">Eletrônicos</option>
+                    <option value="roupas">Roupas e acessórios</option>
+                    <option value="material">Material escolar</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="data_encontrado">Data em que foi encontrado</label>
+                <input type="date" id="data_encontrado" name="data_encontrado" required>
+            </div>
+
+            <div class="campo">
+                <label for="local_encontrado">Local onde foi encontrado</label>
+                <input type="text" id="local_encontrado" name="local_encontrado" required>
+            </div>
+
+            <div class="campo">
+                <label for="fotos">Fotos do objeto</label>
+                <input type="file" id="fotos" name="fotos" accept="image/*" multiple>
+            </div>
+
+            <div class="acoes-form">
+                <a href="{{ url_for('static', filename='') }}" class="btn-cancelar">Cancelar</a>
+                <button type="submit" class="btn-submit">Cadastrar</button>
+            </div>
+        </form>
+    </section>
+{% endblock %}
