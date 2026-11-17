@@ -1,18 +1,27 @@
 ﻿<link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}">
 
-<input type="radio" name="modal-toggle" id="modal-cadastro-toggle" class="modal-toggle">
+<input type="radio" name="modal-toggle" id="modal-cadastro-toggle" class="modal-toggle" {% if abrir_cadastro %}checked{%
+  endif %}>
 
 <div class="modal">
   <label for="modal-fechado" class="modal-fundo"></label>
   <div class="modal-caixa">
     <label for="modal-fechado" class="modal-fechar">&times;</label>
     <h2>Criar conta</h2>
+    {% if erros_cadastro %}
+    <div class="modal-erro">
+      {% for erro in erros_cadastro %}
+      <p>{{ erro }}</p>
+      {% endfor %}
+    </div>
+    {% endif %}
     <form method="POST" action="{{ url_for('usuario.cadastro') }}">
       <label for="cad-nome">Nome</label>
-      <input type="text" id="cad-nome" name="nome" placeholder=" " required minlength="3" maxlength="20">
+      <input type="text" id="cad-nome" name="nome" placeholder=" " required minlength="3" maxlength="20"
+        value="{{ nome_digitado or '' }}">
 
       <label for="cad-email">E-mail</label>
-      <input type="email" id="cad-email" name="email" placeholder=" " required>
+      <input type="email" id="cad-email" name="email" placeholder=" " required value="{{ email_digitado or '' }}">
 
       <label for="cad-senha">Senha</label>
       <input type="password" id="cad-senha" name="senha" placeholder=" " required minlength="6">
@@ -24,4 +33,4 @@
     </form>
     <p>Já tem conta? <label for="modal-login-toggle" class="modal-trocar">Entrar</label></p>
   </div>
-</div>  
+</div>

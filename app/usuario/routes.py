@@ -26,16 +26,6 @@ def cadastro():
     email = request.form.get('email', '')
     senha = request.form.get('senha', '')
     confirmar_senha = request.form.get('confirmar_senha', '')
-    
-    nome = request.form.get('nome', '')
-    email = request.form.get('email', '')
-    senha = request.form.get('senha', '')
-    confirmar_senha = request.form.get('confirmar_senha', '')
-
-    print('NOME:', nome)
-    print('EMAIL:', email)
-    print('SENHA PREENCHIDA:', bool(senha))
-    print('CONFIRMAÇÃO PREENCHIDA:', bool(confirmar_senha))
 
     erros = []
 
@@ -55,11 +45,13 @@ def cadastro():
         erros.append('A senha e a confirmação de senha devem ser iguais.')
 
     if erros:
-        print('ERROS DE VALIDAÇÃO:', erros)
-        for erro in erros:
-            flash(erro, 'cadastro')
-
-        return redirect(url_for('main.index'))
+        return render_template(
+            'index.html',
+            abrir_cadastro=True,
+            erros_cadastro=erros,
+            nome_digitado=nome,
+            email_digitado=email
+        )
 
     sucesso, resultado = criar_usuario(nome, email, senha)
 
