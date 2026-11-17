@@ -1,0 +1,98 @@
+.form-objeto-container {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 24px;
+    background-color: #FFFFFF;
+    border: 1px solid #E6D5FF;
+    border-radius: 10px;
+}
+
+.form-objeto-container h1 {
+    margin-top: 0;
+    font-size: 22px;
+    color: #4B0082;
+}
+
+.form-objeto {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #241238;
+}
+
+.campo input,
+.campo select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #6B6472;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: #241238;
+}
+
+.campo input:focus,
+.campo select:focus {
+    outline: none;
+    border-color: #6A0DAD;
+    box-shadow: 0 0 0 3px #E6D5FF;
+}
+
+.acoes-form {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.btn-submit,
+.btn-cancelar {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-submit {
+    background-color: #4B0082;
+    color: #FFFFFF;
+    border: 2px solid #4B0082;
+}
+
+.btn-submit:hover {
+    background-color: #6A0DAD;
+    border-color: #6A0DAD;
+}
+
+.btn-cancelar {
+    background-color: transparent;
+    color: #4B0082;
+    border: 2px solid #E6D5FF;
+}
+
+.btn-cancelar:hover {
+    background-color: #E6D5FF;
+}
+
+@media (max-width: 480px) {
+    .acoes-form {
+        flex-direction: column-reverse;
+    }
+
+    .btn-submit,
+    .btn-cancelar {
+        text-align: center;
+    }
+}
