@@ -18,8 +18,10 @@ def cria_app():
     
     from app.main.routes import main
     from app.usuario.routes import usuario
+    from app.objeto.routes import objeto
+
     
     app.register_blueprint(main)
     app.register_blueprint(usuario)
-    
+    app.register_blueprint(objeto)
     return app
