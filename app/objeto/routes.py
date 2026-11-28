@@ -1,4 +1,5 @@
 from flask import (
+    abort,
     Blueprint,
     render_template,
     redirect,
@@ -50,3 +51,12 @@ def cadastrar():
         categorias=CATEGORIAS,
         form=request.form
     )
+
+@objeto.route('/detalhes-objeto/<int:id>')
+def detalhes(id):
+    objeto = listar_objeto_id(id)
+    
+    if objeto is None:
+        abort(404)
+    
+    return render_template('detalhes_objeto.html', objeto=objeto)
