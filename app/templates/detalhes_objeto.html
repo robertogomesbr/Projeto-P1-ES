@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalhes do objeto{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/detalhes_objeto.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="detalhes-objeto">
+    <h1>{{ objeto.nome }}</h1>
+
+    <img src="{{ url_for('static', filename=objeto.imagem) }}" alt="Foto de {{ objeto.nome }}">
+
+    <p><strong>Categoria:</strong> {{ objeto.categoria }}</p>
+    <p><strong>Local:</strong> {{ objeto.local }}</p>
+    <p><strong>Data:</strong> {{ objeto.data }}</p>
+</div>
+{% endblock %}
